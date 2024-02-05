@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=.5in, right=.5in, top=.5in, bottom=.5in]{geometry}
+% Modified margins from .5 across the board to .4 .4 .4 .5 because THOU SHALT BE ON 2 PAGES
+\usepackage[left=.4in, right=.4in, top=.4in, bottom=.5in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
@@ -16,43 +17,49 @@
     \textbf{\LARGE Michael Maldonado} \\
     7409 S. 177th St, NE 68136 \\
     605-760-7918 \\
-    \href{mailto:michael@maldonado.tech}{michael@maldonado.tech} \\
-    \href{https://github.com/punchy98}{github.com/punchy98}
+    \href{mailto:michael@maldonado.tech}{michael@maldonado.tech} ||
+    \href{www.linkedin.com/in/michaelcmaldonado}{https://www.linkedin.com/in/michaelcmaldonado} ||
+    \href{https://github.com/punchy98}{github.com/punchy98} 
 \end{center}
 
 \addsec{Professional Summary}
-Experienced Cyber Security professional, with a passion for learning new things. Hands on experience remediating different types of cyber incidents ranging from email account compromises to ransomware. Able to solve problems efficiently and effectively. 
+Experienced Cyber Security professional, with a passion for learning new things. Hands on experience remediating different types of cyber incidents ranging from email account compromises to ransomware. Able to solve problems efficiently and effectively. Homelab and Linux Enthusiast.
 \addsec{Education}
 \textbf{Bachelor of Science: Cyber Operations} \\
 Dakota State University - Madison, SD 
 \addsec{Professional Development}
-\textbf{CISA 301V/301L - ICS Cybersecurity}
+\textbf{CISA 301V/301L - ICS Cybersecurity} \\
+\textbf{SANS SEC503 - Network Monitoring And Threat Detection (In Progress)}
 \addsec{Skills}
 \begin{itemize}
     \begin{multicols}{2}
-    \item Scripting languages: PowerShell, Python, Bash, Perl
+    \leftskip=4em
+    \item Languages: PowerShell, Python, Bash, Perl
+    \item Problem Solving and Extreme Googling
     \item Windows and Linux administration/troubleshooting
     \item Effective and efficient performance under pressure
     \item VMware product suite
     \item Microsoft O365/Azure
     \item DevOps (Ansible, Chef, etc.)
-    \item Problem solving and extreme googling
     \item Quick learner
     \end{multicols}
 \end{itemize}
 
 \addsec{Work History}
 \subsection*{Union Pacific Railroad - Omaha, NE \hfill 05/2022 - Present}
-\textbf{Senior Project Engineer - Cyber Security, 05/2023 - Present}
+\textbf{Senior Cyber Security Engineer, 05/2023 - Present}
 \begin{itemize}
-    \item Lead the OT vulnerability management program to meet TSA directives
+    \leftskip=4em
+    \item Lead the OT vulnerability management program to meet TSA directives for Class I Railroads
     \item Coordinated Proof of Concepts with OT security vendors and created success criteria
     \item Coordinated other teams to identify OT patching processes
     \item Facilitated access management reviews
+    \item Acted as a mentor to new team members
     \item Continued all functions from previous role
 \end{itemize}
-\textbf{Project Engineer - Cyber Security, 05/2022 - 05/2023}
+\textbf{Cyber Security Engineer, 05/2022 - 05/2023}
 \begin{itemize}
+    \leftskip=4em
     \item IT vulnerability management via Tenable (reporting, creating scans, deploying new scanners, etc)
     \item Security administration and troubleshooting for 14000 linux servers
     \item Scripted automated access management reporting in Python
@@ -63,6 +70,7 @@ Dakota State University - Madison, SD
 \subsection*{Marco Technologies - Omaha, NE \hfill 07/2020 - 05/2022}
 \textbf{Cyber Security Specialist, 10/2020 - 05/2022}
 \begin{itemize}
+    \leftskip=4em
     \item Responded to and handled different types of incidents ranging from Office 365 account compromises to ransomware.
     \item Monitored logs in an ELK-based SIEM.
     \item Active threat hunting looking for indicators of attack that SIEM/EDR did not detect.
@@ -74,29 +82,31 @@ Dakota State University - Madison, SD
 \end{itemize}
 \textbf{Rapid Resolution Technician, 07/2020 - 10/2020}
 \begin{itemize}
-    \item Dispatched tickets to the correct team.
+    \leftskip=4em
+    \item Served as a first line of defense for our T1 helpdesk, dispatching tickets and calls.
 \end{itemize}
 
 \subsection*{First Dakota National Bank - Sioux Falls, SD \hfill 04/2020 - 07/2020}
 \textbf{IT Support Specialist}
 \begin{itemize}
-    \item Answered support calls and completed help desk tickets.
-    \item Installed equipment
-    \item Created PowerShell Scripts to automate tasks.
+    \leftskip=4em
+	\item Provided exceptional support by promptly addressing and resolving user queries through support calls and help desk tickets, ensuring a seamless user experience.
+    \item Installed and configured various equipment, ensuring seamless functionality and optimal performance.
+    \item Automated routine tasks by developing PowerShell scripts, enhancing efficiency and reducing manual workload.
 \end{itemize}
 \subsection*{Fishback Financial Corporation - Brookings, SD \hfill 05/2019 - 04/2020}
 \textbf{Technology Intern}
 \begin{itemize}
-    \item Answered support calls and completed help desk tickets.
-    \item Installed equipment and decommissioned virtual desktops.
-    \item Assisted with Windows 10 conversions
-    \item Created PowerShell Scripts.
+    \leftskip=4em
+	\item Provided exceptional support by promptly addressing and resolving user queries through support calls and help desk tickets, ensuring a seamless user experience.
+    \item Demonstrated technical proficiency by efficiently installing equipment and managing the decommissioning process for virtual desktops, contributing to streamlined and optimized IT operations.
+    \item Played a key role in the successful transition to Windows 10, providing valuable assistance in the conversion process and ensuring a smooth migration for end-users.
+    \item Leveraged expertise in automation by creating and implementing time-saving PowerShell scripts, enhancing operational efficiency and reducing manual workload.
+    \item Actively contributed to the overall IT infrastructure by implementing solutions that improved system performance and user productivity.
 \end{itemize}
 
-\addsec{Personal Projects}
-\subsection*{Homelab}
-I have been building a homelab for a few years now. The lab includes used enterprise server and networking equipment. This homelab is dual use it is partially "production" and "development". The production side includes the NAS, media server, network wide ad-blocking, and a few other "critical" services that my family relies on. The "development" side is where I am able to do testing with new technologies without fear of losing production uptime. 
-\\
+\addsec{Personal Project - Homelab}
+I have been building a homelab for a few years now. The lab includes used enterprise server and networking equipment. This homelab is dual use it is partially "production" and "development". The production side includes the NAS, media server, network wide ad-blocking, and a few other "critical" services that my family in multiple states rely on. The "development" side is where I am able to do testing with new technologies without fear of losing production uptime. I also have dozens of IoT devices deployed, everything from power monitoring to smart bulbs to cameras - all managed via Home Assistant. 
 \\
 Technologies used:
 \begin{itemize}
@@ -109,7 +119,7 @@ Technologies used:
     \item Terraform
     \item Cisco Networking
     \item VMware (ESXi/vCenter) and ProxMox VE
-    \item Linux (Ubuntu, RHEL 9, CentOS 8, OpenSUSE)
+    \item Linux (Ubuntu, RHEL 9, CentOS 8, OpenSUSE, FreeBSD)
     \end{multicols}
 \end{itemize}
 \end{document}
