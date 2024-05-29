@@ -1,8 +1,8 @@
 resume.bak.pdf
-*.log
-*.out
-*.aux
-*.fls
-*.gz
-*.fdb_latexmk
+resume.log
+resume.out
+resume.aux
+resume.fls
+resume.gz
+resume.fdb_latexmk
 
