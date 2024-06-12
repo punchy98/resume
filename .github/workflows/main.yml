@@ -17,8 +17,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "resume.pdf"
-      - name: Tag the latest release
-        run: |
-          git tag -f latest ${{ github.sha }}
-          git push origin -f latest
 
