@@ -1,4 +1,4 @@
-name: Build LaTeX Resume
+name: Build LaTeX Resume - Manual
 
 on:
    - workflow_dispatch
