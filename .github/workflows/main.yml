@@ -1,5 +1,8 @@
 name: Build LaTeX Resume
-on: [push]
+on: 
+  push:
+    tags:
+    - '*'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -17,6 +20,7 @@ jobs:
           tag_exists_error: false
           message: "Latest release"
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: ncipollo/release-action@v1
         with:
-          files: resume.pdf
+          artifacts: "resume.pdf"
+
