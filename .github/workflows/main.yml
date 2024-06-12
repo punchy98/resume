@@ -10,6 +10,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
+      - uses: rickstaa/action-create-tag@v1
+        id: "tag_create"
+        with:
+          tag: "latest"
+          tag_exists_error: false
+          message: "Latest release"
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
