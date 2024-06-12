@@ -12,12 +12,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
-      - name: Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "resume.pdf"
       - name: Tag the latest release
         run: |
           git tag -f latest ${{ github.sha }}
           git push origin -f latest
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "resume.pdf"
 
