@@ -23,5 +23,6 @@ jobs:
         with:
           artifacts: "resume.pdf"
           makeLatest: True
+          tag: latest
           
 
