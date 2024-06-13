@@ -14,7 +14,6 @@ jobs:
           root_file: resume.tex
       - name: Tag the latest release
         run: |
-          git tag --delete latest
           git push --delete origin latest
           git push
           git tag -f latest ${{ github.sha }}
