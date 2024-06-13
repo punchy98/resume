@@ -8,13 +8,14 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-        with:
-           fetch-depth: 0
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
       - name: Tag the latest release
         run: |
+          git tag --delete latest
+          git push --delete origin latest
+          git push
           git tag -f latest ${{ github.sha }}
           git push origin -f latest
