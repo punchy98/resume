@@ -21,4 +21,5 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
+          tags: latest
           artifacts: "resume.pdf"
