@@ -18,3 +18,7 @@ jobs:
           git push
           git tag -f latest ${{ github.sha }}
           git push origin -f latest
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "resume.pdf"
