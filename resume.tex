@@ -138,21 +138,31 @@ Dakota State University - Madison, SD
 \href{https://www.credly.com/badges/a65cec63-e07c-4e52-b154-842564aadf65/public_url}{\textbf{GIAC Advisory Board}}
 \section*{Personal Projects:}
 \begin{itemize}
-\item\textbf{Homelab} \\
-For 5+ years, I have been actively maintaining homelab which provides a space for continous learning and self-reliance in an attempt to free mine (and my family's) dependence on cloud hosted software. Below is an incomplete list of tools and technologies I use or have experimented with. For an up to date list of tools and technologies that I am running, please visit my GitHub page.\\
+\item \textbf{Maldonado Homelab Platform} \\
+
+For 5+ years, I have designed, built, and maintained a production-style homelab environment focused on infrastructure-as-code, container orchestration, and self-hosted services. The platform emphasizes automation, observability, segmentation, and reduced dependency on third-party cloud SaaS platforms. 
+
+The environment is built using a layered architecture model:
+
     \begin{itemize}
         \small
         \begin{multicols}{2}
-        \item Containerization (Docker \& Podman)
-        \item Automation \& Scripting (Ansible, Terraform, Python, Bash, Perl)
-        \item Networking (Cisco NX-OS/IOS/ASA, TP-Link Omada SDN)
-        \item Virtualization (ProxMox VE, KVM)
-        \item Visualization \& Monitoring (Zabbix, Prometheus+Grafana)
-        \item Linux (Ubuntu, RHEL 7+, OpenSUSE) and BSD (FreeBSD)
-        \item Security Onion (Snort, Zeek, ELK, etc.)
+        \item \textbf{Container Orchestration:} Kubernetes (K3s)
+        \item \textbf{Container Runtime:} Docker, Podman
+        \item \textbf{Infrastructure as Code:} Terraform (OpenTofu), Ansible
+        \item \textbf{CI/CD \& GitOps:} GitLab CE, GitLab Runners
+        \item \textbf{Virtualization:} Proxmox VE (KVM, LXC)
+        \item \textbf{Networking:} Cisco NX-OS/IOS/ASA, TP-Link Omada SDN (VLAN/ACL design)
+        \item \textbf{DNS \& PKI Automation:} BIND9, Pi-hole, Cloudflare API, Caddy
+        \item \textbf{Monitoring \& Observability:} Prometheus, Grafana, Zabbix
+        \item \textbf{Systems:} Ubuntu, RHEL 7+, OpenSUSE, FreeBSD
+        \item \textbf{Security Tooling:} Security Onion (Snort, Zeek, ELK)
+        \item \textbf{Source of Truth:} NetBox (IPAM, virtualization inventory)
         \end{multicols}
     \end{itemize}
+
+This environment includes automated VM/LXC provisioning, dynamic DNS management via Terraform pipelines, Kubernetes cluster deployment across multiple hypervisors, GitLab-based CI/CD for infrastructure and application workloads, and full-stack observability integration.
+\end{itemize}
 %\item\textbf{Capture the Flags and OSINT Challenges} \\
 %I have completed 10 machines (11 user owns and 10 system owns) and 11 Sherlocks on HackTheBox. I also participate in a
-\end{itemize}
 \end{document}
