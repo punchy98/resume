@@ -1,179 +1,234 @@
-\documentclass[a4paper,10pt]{article}
-% Modified margins from .5 across the board to .4 .4 .4 .5 because THOU SHALT BE ON 2 PAGES
-\usepackage[left=.4in, right=.4in, top=.4in, bottom=.5in]{geometry}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{hyperref}
-\usepackage{multicol}
-\usepackage{sectsty}
-\usepackage{unnumberedtotoc}
+\documentclass[letterpaper,9pt]{extarticle}
 
-% Custom formatting for addsecs and lists
-\titleformat{\addsec}{\large\bfseries}{\thesection}{1em}{}
-\setlist[itemize]{leftmargin=*, labelsep=5pt}
+\usepackage[
+  top=0.45in,
+  bottom=0.45in,
+  left=0.55in,
+  right=0.55in,
+]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{muted}{HTML}{444444}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\color{accent}\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.35em}{\color{accent}\titlerule[0.6pt]}\vspace{0.3em}]
+
+\titlespacing*{\section}{0pt}{0.85em}{0.55em}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=0.08em,
+  topsep=0.15em,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\textbullet,
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{0.2em}%
+  \textbf{#1}\hfill{\small #2}\\[-0.1em]
+  {\small\textit{#3} \textbar\ {\color{muted}#4}}%
+}
+
+\newcommand{\resumeCompany}[2]{%
+  \vspace{0.2em}%
+  \textbf{#1}\hfill{\small\color{muted}#2}\\[0.2em]%
+}
+
+\newcommand{\resumePosition}[2]{%
+  {\small\textit{#1}}\hfill{\small #2}%
+}
+
+\newcommand{\resumeItem}[1]{\item\small #1}
+
+\newcommand{\contactSep}{\enspace\textbar\enspace}
+
 \begin{document}
-% Header block
+
+% Header
 \begin{center}
-    \textbf{\LARGE Michael Maldonado} \\
-    7409 S. 177th St, NE 68136 \\
-    605-760-7918 \\
-    \href{mailto:michael@maldonado.tech}{michael@maldonado.tech} ||
-    \href{https://linkedin.com/in/michaelcmaldonado}{linkedin.com/in/michaelcmaldonado} ||
+  {\LARGE\bfseries\color{accent} Michael Maldonado}\\[0.35em]
+  {\small
+    7409 S. 177th St, NE 68136 \contactSep
+    605-760-7918 \contactSep
+    \href{mailto:michael@maldonado.tech}{michael@maldonado.tech} \contactSep
+    \href{https://linkedin.com/in/michaelcmaldonado}{linkedin.com/in/michaelcmaldonado} \contactSep
     \href{https://github.com/punchy98}{github.com/punchy98}
+  }
 \end{center}
 
 \section*{Professional Summary}
-Michael is a Cyber Security professional with a passion for Blue Team operations and continuous learning. He has extensive experience in managing and remediating diverse cyber incidents, ranging from email account compromises to ransomware. Michael has a strong IT background with expertise in Linux and Windows administration.
+\small
+Cybersecurity professional with 6+ years of experience spanning blue team operations, incident response, detection engineering, and DevSecOps. Proven track record managing and remediating diverse security incidents, from business email compromise to ransomware, across on-premises and multi-cloud (AWS, Azure, GCP) environments. Strong foundation in Linux and Windows administration, security automation, and cyber threat intelligence, with a passion for continuous learning and building secure-by-default systems.
+
 \section*{Skills}
 \small
-\begin{itemize}
-    \begin{multicols}{2}
-    \small
-    \leftskip=4em
-    \item Problem Solving and Extreme Googling
-    \item Open Source Intelligence (OSINT)
-    \item Windows and Linux administration/troubleshooting
-    \item Effective and efficient performance under pressure
-    \item Cyber Threat Intelligence
-    \item Network Analysis and Threat Hunting
-    \item Cloud Incident Response (AWS, GCP, Azure)
-    \item Security Automation (Tines, CrowdStrike Falcon Fusion)
-    \end{multicols}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.25em]
+  \item Incident Response \& Remediation
+  \item Threat Hunting \& Detection Engineering
+  \item Cyber Threat Intelligence (CTI) \& OSINT
+  \item SIEM, EDR \& Network Traffic Analysis
+  \item Cloud Incident Response (AWS, Azure, GCP)
+  \item Vulnerability Management (Tenable)
+  \item Security Automation \& SOAR (Tines, Falcon Fusion)
+  \item Windows \& Linux Administration
+  \item Infrastructure as Code (Terraform, Ansible)
+  \item DevSecOps \& CI/CD Security (SAST, DAST, SCA)
 \end{itemize}
+\end{multicols}
 
 \section*{Work History}
-\begin{itemize}
-    \item\textbf{Senior DevSecOps Engineer, 05/2026 - Present} \
-    Cloudera - Remote - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Engineered and operationalized self-service security platforms that embedded secure-by-default controls into product development workflows and reduced security toil across engineering teams.
-        \item Integrated and matured automated security testing, including SAST, DAST, SCA, IAST, secrets detection, and policy enforcement, across CI/CD pipelines to identify and remediate risk earlier in the software lifecycle.
-        \item Designed and maintained secure, scalable infrastructure across AWS, Azure, GCP, and on-premises environments using Terraform, Ansible, and Infrastructure as Code best practices.
-        \item Deployed, secured, and supported Kubernetes-based security services using Helm, automated policy enforcement, secrets management, and security-as-code practices.
-        \item Led security architecture reviews, threat modeling, and technical risk assessments for complex applications, distributed systems, and cloud infrastructure.
-        \item Partnered with product engineering, SRE, security operations, incident response, and compliance teams to improve security visibility, production monitoring, and organization-wide adoption of DevSecOps standards.
-    \end{itemize}
-\begin{itemize}
-    \item\textbf{Senior Security Response Engineer, 07/2024 - 05/2026} \\
-    Cloudera - Remote - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Performed proactive monitoring and reponse to security alerts and events from various sources (SIEM, Cloud Security Platforms, EDR)
-        \item Developed new detections and alerting
-        \item Conducted in-depth analysis of security incidents to determine the root cause and impact, and recommended appropriate mitigation strategies.
-        \item Developed and maintained incident response playbooks, processes, and procedures to streamline response efforts and improve the organization's security posture.
-        \item Conducted threat hunting activities to identify advanced threats
-        \item Identified, documented, and researched Threat Intelligence findings and reports.
-        \item Provided mentorship and guidance to junior analysts and engineers.
-        \item Evaluated and implemented new security tools and technologies.
-    \end{itemize}
-    \item\textbf{Senior Cyber Security Engineer, 05/2023 - 07/2024} \\
-    Union Pacific Railroad - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Lead the OT vulnerability management program to meet TSA directives for Class I Railroads
-        \item Coordinated Proof of Concepts with OT security vendors and created success criteria
-        \item Coordinated other teams to identify OT patching processes
-        \item Facilitated access management reviews
-        \item Acted as a mentor to new team members
-        \item Continued all functions from previous role
-    \end{itemize}
-    \item\textbf{Cyber Security Engineer, 05/2022 - 05/2023} \\
-    Union Pacific Railroad - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item IT vulnerability management via Tenable (reporting, creating scans, deploying new scanners, etc)
-        \item Security administration and troubleshooting for 14,000 Linux servers
-        \item Scripted automated access management reporting in Python
-        \item Created process documentation
-        \item Acted as a mentor to new team members, helping with whatever they needed
-        \item Lead our team's script conversion process going from Perl 5 to Python 3.9
-    \end{itemize}
-    \item\textbf{Cyber Security Specialist, 10/2020 - 05/2022} \\
-    Marco Techologies - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Responded to and handled different types of incidents ranging from Office 365 account compromises to ransomware.
-        \item Monitored logs in an ELK-based SIEM.
-        \item Active threat hunting looking for indicators of attack that SIEM/EDR did not detect.
-        \item Assisted clients with ongoing 3rd party audits and remediating the findings.
-        \item Performed security assessments for clients aligned to the NIST Cyber Security Framework.
-        \item Performed vulnerability scans, created remediation plans, and assisted with the remediation.
-        \item Wrote scripts to automate various tasks, including O365 management.
-        \item Served as a Cyber Security SME to clients.
-    \end{itemize}
-    \item\textbf{Rapid Resolution Technician, 07/2020 - 10/2020} \\
-    Marco Techologies - Omaha, NE
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Served as a first line of defense for our Tier 1 helpdesk, dispatching tickets and calls.
-    \end{itemize}
-    \item\textbf{IT Support Specialist, 04/2020 - 07/2020} \\
-    First Dakota National Bank - Sioux Falls, SD
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Provided exceptional support by promptly addressing and resolving user queries through support calls and help desk tickets, ensuring a seamless user experience.
-        \item Installed and configured various equipment, ensuring seamless functionality and optimal performance.
-        \item Automated routine tasks by developing PowerShell scripts, enhancing efficiency and reducing manual workload.
-    \end{itemize}
-    \item\textbf{Technology Intern, 05/2019 - 04/2020} \\
-    Fishback Financial Corporation - Brookings, SD
-    \begin{itemize}
-        \small
-        \leftskip=4em
-        \item Provided exceptional support by promptly addressing and resolving user queries through support calls and help desk tickets, ensuring a seamless user experience.
-        \item Demonstrated technical proficiency by efficiently installing equipment and managing the decommissioning process for virtual desktops, contributing to streamlined and optimized IT operations.
-        \item Played a key role in the successful transition to Windows 10, providing valuable assistance in the conversion process and ensuring a smooth migration for end-users.
-        \item Leveraged expertise in automation by creating and implementing time-saving PowerShell scripts, enhancing operational efficiency and reducing manual workload.
-    \end{itemize}
+\begin{itemize}[leftmargin=0pt, label={}, itemsep=0.35em]
+
+  \item
+  \resumeCompany{Cloudera}{Remote - Omaha, NE}
+  \resumePosition{Senior DevSecOps Engineer}{05/2026 - Present}
+  \begin{itemize}
+    \resumeItem{Engineered and operationalized self-service security platforms that embedded secure-by-default controls into product development workflows and reduced security toil across engineering teams.}
+    \resumeItem{Integrated and matured automated security testing, including SAST, DAST, SCA, IAST, secrets detection, and policy enforcement, across CI/CD pipelines to identify and remediate risk earlier in the software lifecycle.}
+    \resumeItem{Designed and maintained secure, scalable infrastructure across AWS, Azure, GCP, and on-premises environments using Terraform, Ansible, and Infrastructure as Code best practices.}
+    \resumeItem{Deployed, secured, and supported Kubernetes-based security services using Helm, automated policy enforcement, secrets management, and security-as-code practices.}
+    \resumeItem{Led security architecture reviews, threat modeling, and technical risk assessments for complex applications, distributed systems, and cloud infrastructure.}
+    \resumeItem{Partnered with product engineering, SRE, security operations, incident response, and compliance teams to improve security visibility, production monitoring, and organization-wide adoption of DevSecOps standards.}
+  \end{itemize}
+  \vspace{0.25em}
+  \resumePosition{Senior Security Response Engineer}{07/2024 - 05/2026}
+  \begin{itemize}
+    \resumeItem{Triaged and responded to ~5 high-impact security incidents per month (averaging \$50K, up to \$700K in exposure) across SIEM, cloud security platforms, and EDR.}
+    \resumeItem{Engineered new detection rules and alerting logic to expand threat coverage.}
+    \resumeItem{Led in-depth incident analysis to determine root cause and impact, and drove appropriate mitigation strategies.}
+    \resumeItem{Built and maintained incident response playbooks, processes, and procedures, streamlining response efforts and strengthening the organization's security posture.}
+    \resumeItem{Conducted proactive threat hunting to identify advanced and evasive threats.}
+    \resumeItem{Researched, documented, and operationalized cyber threat intelligence findings and reporting.}
+    \resumeItem{Mentored and guided junior analysts and engineers.}
+    \resumeItem{Implemented security controls and built automated response workflows that cut average response and investigation time from ~1 hour to 15 minutes while mitigating financial impact, primarily AWS cloud spend.}
+  \end{itemize}
+
+  \item
+  \resumeCompany{Union Pacific Railroad}{Omaha, NE}
+  \resumePosition{Senior Cyber Security Engineer}{05/2023 - 07/2024}
+  \begin{itemize}
+    \resumeItem{Led the OT vulnerability management program to meet TSA directives for Class I Railroads.}
+    \resumeItem{Directed proof-of-concept evaluations with OT security vendors and defined success criteria.}
+    \resumeItem{Partnered with cross-functional teams to establish OT patching processes.}
+    \resumeItem{Facilitated access management and recertification reviews.}
+    \resumeItem{Mentored and onboarded new team members.}
+    \resumeItem{Continued all functions from previous role.}
+  \end{itemize}
+  \vspace{0.25em}
+  \resumePosition{Cyber Security Engineer}{05/2022 - 05/2023}
+  \begin{itemize}
+    \resumeItem{Managed enterprise IT vulnerability management via Tenable, including scan creation, reporting, and scanner deployment.}
+    \resumeItem{Provided security administration and troubleshooting across 14,000 Linux servers.}
+    \resumeItem{Automated access management reporting in Python, reducing manual effort.}
+    \resumeItem{Authored process and operational documentation.}
+    \resumeItem{Mentored new team members across day-to-day operations.}
+    \resumeItem{Led the team's script migration from Perl 5 to Python 3.9.}
+  \end{itemize}
+
+  \item
+  \resumeCompany{Marco Technologies}{Omaha, NE}
+  \resumePosition{Cyber Security Specialist}{10/2020 - 05/2022}
+  \begin{itemize}
+    \resumeItem{Responded to and remediated 100+ security incidents per month, including ~5 ransomware cases alongside email, account, and phishing compromises.}
+    \resumeItem{Monitored and triaged logs in an ELK-based SIEM.}
+    \resumeItem{Performed active threat hunting to surface indicators of attack missed by SIEM/EDR.}
+    \resumeItem{Supported clients through third-party audits and remediation of findings.}
+    \resumeItem{Conducted security assessments aligned to the NIST Cybersecurity Framework.}
+    \resumeItem{Performed vulnerability scans, developed remediation plans, and assisted with remediation.}
+    \resumeItem{Developed scripts to automate operational tasks, including Office 365 management.}
+    \resumeItem{Served as a cybersecurity subject matter expert (SME) for clients.}
+  \end{itemize}
+  \vspace{0.25em}
+  \resumePosition{Rapid Resolution Technician}{07/2020 - 10/2020}
+  \begin{itemize}
+    \resumeItem{Served as first line of support for the Tier 1 help desk, triaging and dispatching tickets and calls.}
+  \end{itemize}
+
+  \item
+  \resumeCompany{First Dakota National Bank}{Sioux Falls, SD}
+  \resumePosition{IT Support Specialist}{04/2020 - 07/2020}
+  \begin{itemize}
+    \resumeItem{Delivered responsive end-user support, resolving queries through support calls and help desk tickets.}
+    \resumeItem{Installed and configured end-user equipment to ensure reliable performance.}
+    \resumeItem{Automated routine tasks with PowerShell, improving efficiency and reducing manual workload.}
+  \end{itemize}
+
+  \item
+  \resumeCompany{Fishback Financial Corporation}{Brookings, SD}
+  \resumePosition{Technology Intern}{05/2019 - 04/2020}
+  \begin{itemize}
+    \resumeItem{Provided end-user support, resolving queries through support calls and help desk tickets.}
+    \resumeItem{Installed equipment and managed virtual desktop decommissioning to streamline IT operations.}
+    \resumeItem{Supported the enterprise migration to Windows 10, ensuring a smooth end-user transition.}
+    \resumeItem{Created PowerShell automation scripts to improve efficiency and reduce manual workload.}
+  \end{itemize}
+
 \end{itemize}
 
 \section*{Education}
-\textbf{Bachelor of Science: Cyber Operations} \\
-Dakota State University - Madison, SD
+\resumeSubheading{Bachelor of Science: Cyber Operations}{}{Dakota State University}{Madison, SD}
+
 \section*{Professional Development and Certifications}
+\small
 \href{https://www.credly.com/badges/87563fff-910c-449c-ab21-f571b162cd4b/public_url}{\textbf{GIAC Certified Intrusion Analyst (GCIA)}}\\
 \href{https://arcx.io/verify-certificate?id=2991f7743ca358a0f528c32e6685a7f68ffcd332&k=387d43ca09294cb6a13b2ed95eccb859}{\textbf{arcX Cyber Threat Intelligence Practitioner}}\\
 \href{https://certification.tines.com/certificate/qTQkd1xZ7Q}{\textbf{Tines Core Certification}}\\
 \href{https://www.credly.com/badges/f1f32bab-c511-4114-b884-e69ae2506275/public_url}{\textbf{AWS Partner: AWS GovCloud (US) Essentials}}\\
 \href{https://www.credly.com/badges/4c4eef78-ec4f-4911-ae68-dc4a4c811ba2/public_url}{\textbf{AWS Partner: Technical Accredited}}\\
 \textbf{CISA ICS Cybersecurity Training}
+
 \section*{Professional Organizations}
+\small
 \textbf{Infragard - Nebraska Chapter} \\
 \href{https://www.credly.com/badges/a65cec63-e07c-4e52-b154-842564aadf65/public_url}{\textbf{GIAC Advisory Board}}
-\section*{Personal Projects:}
-\begin{itemize}
-\item \textbf{Homelab} \\
 
-For 5+ years, I have designed, built, and maintained a production-style homelab environment focused on infrastructure-as-code, container orchestration, and self-hosted services. The platform emphasizes automation, observability, segmentation, and reduced dependency on third-party cloud SaaS platforms. The environment is built using a layered architecture model:
-
-    \begin{itemize}
-        \small
-        \begin{multicols}{2}
-        \item \textbf{Container Orchestration:} Kubernetes (K3s)
-        \item \textbf{Container Runtime:} Docker, Podman
-        \item \textbf{Infrastructure as Code:} Terraform, Ansible
-        \item \textbf{CI/CD \& GitOps:} GitLab CE
-        \item \textbf{Virtualization:} Proxmox VE
-        \item \textbf{Networking:} Cisco NX-OS/IOS/ASA, TP-Link Omada SDN (VLAN/ACL design)
-        \item \textbf{DNS \& PKI Automation:} BIND9, Pi-hole, Cloudflare API, Caddy, NGINX
-        \item \textbf{Monitoring \& Observability:} Prometheus, Grafana, Zabbix
-        \item \textbf{Systems:} Ubuntu, RHEL 7+, OpenSUSE, FreeBSD
-        \item \textbf{Security Tooling:} Security Onion (Snort, Zeek, ELK)
-        \item \textbf{Source of Truth:} NetBox (IPAM, virtualization inventory)
-        \end{multicols}
-    \end{itemize}
-
-This environment includes automated VM/LXC provisioning, dynamic DNS management via Terraform pipelines, Kubernetes cluster deployment across multiple hypervisors, GitLab-based CI/CD for infrastructure and application workloads, and full-stack observability integration.
+\section*{Personal Projects}
+\small
+\begin{itemize}[leftmargin=0pt, label={}, itemsep=0.2em]
+  \item
+  \textbf{Homelab — Self-Hosted Infrastructure Platform}\\[0.15em]
+  For 5+ years, designed, built, and maintained a production-style homelab centered on infrastructure-as-code, GitOps automation, and self-hosted services across a multi-hypervisor Proxmox environment, emphasizing automation, observability, network segmentation, and reduced dependency on third-party SaaS.
+  \begin{itemize}
+    \begin{multicols}{2}
+      \resumeItem{\textbf{Virtualization:} Proxmox VE (3-node), PBS}
+      \resumeItem{\textbf{Orchestration:} Kubernetes (K3s, 3-node)}
+      \resumeItem{\textbf{Infrastructure as Code:} Terraform, Ansible}
+      \resumeItem{\textbf{CI/CD \& GitOps:} Self-hosted GitLab CE}
+      \resumeItem{\textbf{DNS \& Filtering:} Technitium, Cloudflare API}
+      \resumeItem{\textbf{Reverse Proxy \& TLS:} NGINX, Let's Encrypt}
+      \resumeItem{\textbf{Networking:} TP-Link Omada SDN (VLANs/ACLs), WireGuard}
+      \resumeItem{\textbf{Monitoring:} Prometheus, Grafana, InfluxDB, Splunk}
+      \resumeItem{\textbf{Security \& IPAM:} Security Onion, NetBox}
+      \resumeItem{\textbf{Systems \& Runtime:} Ubuntu, RHEL, Docker}
+    \end{multicols}
+  \end{itemize}
+  \vspace{0.15em}
+  \begin{itemize}
+    \resumeItem{Automated VM provisioning with Terraform (cloud-init golden images) across 3 Proxmox hosts, with Ansible bootstrapping a 3-node K3s cluster.}
+    \resumeItem{Built a single-source-of-truth Terraform configuration driving a 56-service DNS catalog (Technitium + Cloudflare) and auto-generating 27 NGINX reverse-proxy sites via Python.}
+    \resumeItem{Orchestrated GitLab CI pipelines (Terraform plan/apply $\rightarrow$ config generation $\rightarrow$ Ansible deploy) with automated wildcard TLS renewal and split-horizon DNS.}
+  \end{itemize}
 \end{itemize}
+
 %\item\textbf{Capture the Flags and OSINT Challenges} \\
 %I have completed 10 machines (11 user owns and 10 system owns) and 11 Sherlocks on HackTheBox. I also participate in a
+
 \end{document}
