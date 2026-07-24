@@ -41,7 +41,7 @@ jobs:
           allowUpdates: true
 
       - name: Publish rolling "latest" release
-        if: github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/master'
         uses: ncipollo/release-action@v1
         with:
           tag: latest
